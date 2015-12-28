@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Learning Vue</title>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.13/vue.min.js"></script>
+    </head>
+    <body>
+
+        <div id="app">
+            <h1>{{ message }}</h1>        
+        
+            <input type="text" v-model="message">
+    
+            <pre>
+                {{ $data | json }}
+            </pre>
+        </div>
+
+
+
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello World'
+                }
+            })
+        </script>
+    </body>
+</html>
