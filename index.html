@@ -7,21 +7,14 @@
     <body>
 
         <div id="app">
-            <form>
-                <span class="error" v-show="!message">
-                    You must enter a message
-                </span>
-                <br>
-                <textarea v-model="message"></textarea>
-                <br>
-                <button type"submit" v-show="message">
-                    Send Message
+            <form action="done.html" @submit.prevent="handleIt">
+                <button type="submit">
+                    Submit Me!
                 </button>
             </form>
-
-            <pre>
-                {{ $data | json }}
-            </pre>
+            <button type="submit" @click="count+=1">
+                    Increment Counter: {{ count }}
+            </button>
         </div>
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.13/vue.min.js"></script>
@@ -29,8 +22,13 @@
         <script>
             new Vue({
                 el: '#app',
-                data: {
-                    message: ''
+                data: { 
+                    count: 0
+                },
+                methods: {
+                    handleIt: function() {
+                        alert('Handled');
+                    }
                 }
             })
         </script>
